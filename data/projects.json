@@ -1,0 +1,264 @@
+{
+  "skills": [
+    {
+      "id": "net-infra",
+      "title": { "hu": "Hálózat & infrastruktúra", "en": "Networking & Infrastructure" },
+      "rows": [
+        {
+          "title": { "hu": "Routing & Switching (Cisco)", "en": "Routing & Switching (Cisco)" },
+          "desc": {
+            "hu": "VLAN/trunk, STP, EtherChannel; IGP routing; FHRP; alap hibakeresés és topológiák felépítése.",
+            "en": "VLAN/trunking, STP, EtherChannel; IGP routing; FHRP; troubleshooting and building small topologies."
+          }
+        },
+        {
+          "title": { "hu": "Alapszolgáltatások & biztonság", "en": "Core Services & Security" },
+          "desc": {
+            "hu": "DHCP/DNS alapok; ACL, NAT/PAT; IPv6 áttekintés; VPN/TLS/IPsec fogalmak, alap hardening.",
+            "en": "DHCP/DNS fundamentals; ACLs, NAT/PAT; IPv6 overview; VPN/TLS/IPsec concepts, basic hardening."
+          }
+        }
+      ],
+      "tags": {
+        "hu": [ "Cisco Packet Tracer", "IGP • FHRP", "ACL / NAT", "Troubleshooting" ],
+        "en": [ "Packet Tracer", "IGP • FHRP", "ACL / NAT", "Troubleshooting" ]
+      }
+    },
+    {
+      "id": "dev-auto",
+      "title": { "hu": "Fejlesztés & Automatizálás", "en": "Development & Automation" },
+      "rows": [
+        {
+          "title": { "hu": ".NET / Desktop", "en": ".NET & Desktop" },
+          "desc": {
+            "hu": "C# • WPF • MVVM • DataGrid logika • PDF/nyomtatásra kész kimenet.",
+            "en": "C# • WPF • MVVM • DataGrid logic • PDF/print-ready output."
+          }
+        },
+        {
+          "title": { "hu": "Web & Adat", "en": "Web & Data" },
+          "desc": {
+            "hu": "ASP.NET Core MVC • EF Core • PostgreSQL • Bootstrap • alap HTML/CSS/JS.",
+            "en": "ASP.NET Core MVC • EF Core • PostgreSQL • Bootstrap • basic HTML/CSS/JS."
+          }
+        }
+      ],
+      "tags": {
+        "hu": [ "Git/GitHub", "Automatizálás (Python/VBA/C++)", "Dokumentáció" ],
+        "en": [ "Git/GitHub", "Automation (Python/VBA/C++)", "Documentation" ]
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "femeta",
+      "pills": {
+        "hu": [
+          "Offline-first • Helyszíni pontozás • Jegyzőkönyv",
+          "2024–2026"
+        ],
+        "en": [
+          "Offline • On-site scoring • Reports",
+          "2024–2026"
+        ]
+      },
+      "title": {
+        "hu": "FEMETA Versenykezelő (WPF/.NET 8)",
+        "en": "FEMETA Competition Manager (WPF/.NET 8)"
+      },
+      "desc": {
+        "hu": "Offline pontozó program légpuska/légpisztoly/lézerfegyver versenyekhez és gyakorláshoz (egyéni + csapat), gyors helyszíni működés, automatikus holtverseny-kezelés és egykattintásos A4 PDF jegyzőkönyvek.",
+        "en": "Offline scoring tool for air rifle/pistol/lasergun events and practice (individual + teams), fast on-site operation, automatic tie-breaks, and one-click A4 PDFs."
+      },
+      "stack": "C# • WPF • MVVM • PDFsharp/MigraDoc • JSON",
+      "highlights": {
+        "hu": [
+          "Rugalmas táblázat: 1–20 sorozatot kezel, és gyengébb gépen is gyorsan fut.",
+          "Ranglista frissítése rendezés után is, csapatokkal együtt; holtversenyt automatikusan kezeli.",
+          "Automatikus mentés, alap ellenőrzések (hibák/duplikációk), kilépés előtt mentésre figyelmeztet.",
+          "A4 PDF export nyomtatható formában, kategóriánként.."
+        ],
+        "en": [
+          "Flexible table (1–20 rounds) and runs smoothly even on low-spec PCs.",
+          "Rankings update correctly after sorting (including teams) with automatic tie-break handling.",
+          "Autosave + basic checks (validation/duplicates) and “save before exit” prompts.",
+          "Clean A4 PDF export: printable, paginated, and grouped by category."
+        ]
+      },
+      "links": [
+        {
+          "type": "case",
+          "doc": "femeta"
+        }
+      ]
+    },
+    {
+      "id": "crm",
+      "pills": {
+        "hu": [
+          "Web • CRUD • Adat",
+          "2025–"
+        ],
+        "en": [
+          "Web • CRUD • Data",
+          "2025–"
+        ]
+      },
+      "title": {
+        "hu": "Virág Nagyker CRM (ASP.NET Core + PostgreSQL)",
+        "en": "Flower Wholesale CRM (ASP.NET Core + PostgreSQL)"
+      },
+      "desc": {
+        "hu": "Belső használatra készült CRM rendeléskezeléshez és törzsadatokhoz. Reszponzív web UI, gyors listák kereséssel/szűréssel, és olyan felépítés, ami később könnyen bővíthető.",
+        "en": "An internal CRM for order handling and master data. Responsive web UI, fast tables with search/filter, and a solid structure that’s easy to extend."
+      },
+      "stack": "ASP.NET Core MVC • EF Core • PostgreSQL • Bootstrap",
+      "highlights": {
+        "hu": [
+          "Kisvállalati CRM: rendelés- és törzsadat-kezelés adatbázissal (vevők/szállítók/termékek), áttekinthető listákkal.",
+          "Gyors keresés/szűrés/rendezés a táblákban; képfeltöltés és előnézet; modálok/partialok.",
+          "EF Core + PostgreSQL: letisztult adatmodell, bővíthető felépítés, karbantarthatóságra építve.",
+          "Szerepkörök és jogosultságok, audit napló, PDF munkafolyamatok, biztonságos mentések."
+        ],
+        "en": [
+          "Small-business CRM: database-backed order and master data management (customers/suppliers/products) with clear overviews.",
+          "Fast search/filter/sort tables; image upload + preview; reusable modals/partials.",
+          "EF Core + PostgreSQL: clean data model and a structure designed to be maintainable and extendable.",
+          "Roles/permissions, audit logging, PDF workflows, secure backups."
+        ]
+      },
+      "links": [
+        {
+          "type": "case",
+          "doc": "crm"
+        }
+      ]
+    },
+    {
+      "id": "automation",
+      "pills": {
+        "hu": [
+          "Automatizálás",
+          "2017–"
+        ],
+        "en": [
+          "Automation",
+          "2017–"
+        ]
+      },
+      "title": {
+        "hu": "Munkafolyamat automatizálás (C++ / Python / VBA)",
+        "en": "Workflow Automation (C++ / Python / VBA)"
+      },
+      "desc": {
+        "hu": "Kisebb eszközök és scriptek ismétlődő feladatok csökkentésére: tömeges szöveg/adatfeldolgozás, Excel/VBA automatizálás, illetve felület automatizálás régebbi leltárkezelő rendszerhez, ahol nem volt API vagy lehetőség tömeges műveletekre.",
+        "en": "Small tools and scripts to reduce repetitive work: batch text/data cleanup, Excel/VBA automation, and supervised UI automation for a legacy inventory management system where no bulk action or API was available."
+      },
+      "stack": "C++ • Python • VBA • Excel/Office",
+      "highlights": {
+        "hu": [
+          "C++/Python batch eszköz nagy mennyiségű/összetett szöveges adat feldolgozására és egységes átalakítására.",
+          "Excel/VBA makrók adatkezeléshez és egyedi rendezési logikához.",
+          "Felügyelettel futó felületi automatizálás ismétlődő lépések gyorsítására.",
+          "Fókusz a biztonságon és hibacsökkentésen: ellenőrzések, óvatos lépések, kevesebb kézi hiba."
+        ],
+        "en": [
+          "C++/Python batch tool for processing large/complex text datasets (repeatable transformations).",
+          "Excel/VBA macros for structured data handling and custom sorting logic.",
+          "Supervised UI automation to speed up repetitive inventory maintenance tasks.",
+          "Focus on safety: validation, careful steps, and minimizing manual errors."
+        ]
+      }
+    },
+    {
+      "id": "academic-writeups",
+      "pills": {
+        "hu": [ "Egyetemi (szerkesztett)", "Angol PDF-ek" ],
+        "en": [ "Coursework (edited)", "English PDFs" ]
+      },
+      "title": {
+        "hu": "Egyetemi anyagok — publikus (szerkesztett) változat",
+        "en": "Academic write-ups — public (edited) versions"
+      },
+      "desc": {
+        "hu": "Kivonatok és bemutatók egyetemi anyagokból. A publikus verziókban az azonosítók anonimizálva vannak, és csak a saját részeimet közlöm.",
+        "en": "Selected university write-ups and demos. Public versions are anonymized, and I only include my own parts."
+      },
+      "stack": "Documentation • LLM Security Concepts • NAS",
+      "highlights": {
+        "hu": [
+          "Azonosítók eltávolítva.",
+          "A LLM anyag szerkesztett: nem saját részek eltávolítva, csak saját tartalom + nyilvános források."
+        ],
+        "en": [
+          "Special identifiers removed.",
+          "LLM write-up is edited: non-authored parts removed; only my content + public sources."
+        ]
+      },
+      "links": [
+        {
+          "type": "Unraid (PDF)",
+          "label": "Unraid demo (PDF)",
+          "href": "assets/pdfs/Unraid_Documentation_REDACTED.pdf"
+        },
+        {
+          "type": "Unraid (PPT)",
+          "label": "Unraid demo (PPT)",
+          "href": "assets/pdfs/Unraid_Presentation_REDACTED.pdf"
+        },
+        {
+          "type": "Attacks on LLM (PDF)",
+          "label": "Attacks on LLMs (PDF)",
+          "href": "assets/pdfs/Attacks_Against_LLM_REDACTED.pdf"
+        },
+        {
+          "type": "Attacks on LLM (PPT)",
+          "label": "Attacks on LLMs (PPT)",
+          "href": "assets/pdfs/Attacks_Against_LLM_Presentation_REDACTED.pdf"
+        }
+      ]
+    }
+  ],
+  "openSource": [
+    {
+      "id": "ide21-localization",
+      "pills": {
+        "hu": [ "Lokalizáció", "HU fordítás" ],
+        "en": [ "Localization", "HU translation" ]
+      },
+      "title": {
+        "hu": "IDE21 — magyar fordítás finomítások",
+        "en": "IDE21 — Hungarian localization improvements"
+      },
+      "desc": {
+        "hu": "Hiányzó magyar UI szövegek pótlása, majd a meglévő fordítás következetesítése (terminológia, helyesírás, stílus).",
+        "en": "Filled missing Hungarian UI strings, then refined consistency across existing translations (terminology, wording, style)."
+      },
+      "stack": "i18n • UI copy • consistency",
+      "links": [
+        { "type": "PR1", "label": "PR #180", "href": "https://github.com/nebojsatomic/IDE21/pull/180" },
+        { "type": "PR2", "label": "PR #187", "href": "https://github.com/nebojsatomic/IDE21/pull/187" }
+      ]
+    },
+    {
+      "id": "lucenenet-site-nav",
+      "pills": {
+        "hu": [ "Doksi", "Web/CSS" ],
+        "en": [ "Docs", "Web/CSS" ]
+      },
+      "title": {
+        "hu": "Apache Lucene.NET — navigáció & DocFX finomítások",
+        "en": "Apache Lucene.NET — navigation & DocFX improvements"
+      },
+      "desc": {
+        "hu": "Webes navigáció egységesítése (site + apidocs), ASF linkek bevezetése és kisebb megjelenési hibák javítása. (Folyamatban)",
+        "en": "Unified site + apidocs navigation, added ASF-required links, and fixed small layout issues. (Ongoing)"
+      },
+      "stack": "DocFX • partials • CSS",
+      "links": [
+        { "type": "PR1", "label": "PR #1198 (merged)", "href": "https://github.com/apache/lucenenet/pull/1198" },
+        { "type": "PR2", "label": "PR #1232 (in review)", "href": "https://github.com/apache/lucenenet/pull/1232" }
+      ]
+    }
+  ]
+}

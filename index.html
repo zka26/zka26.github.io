@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Zoltán Katona — IT Support • IT Ops • Cisco • .NET (WPF/ASP.NET) • Python/C++"
+        data-i18n-attr="content:meta.description" />
+  <title data-i18n="meta.title">Zoltán Katona | zka26</title>
+
+  <meta name="theme-color" content="#06070a" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+  </div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <img src="assets/favicon.png"
+               alt="Favicon"
+               loading="lazy"
+               decoding="async"
+               width="50"
+               height="50" />
+          <div>
+            <h1 data-i18n="nav.name">Zoltán Katona</h1>
+            <p data-i18n="nav.tagline">IT Support • IT Ops • Cisco</p>
+            <p data-i18n="nav.tagline2">.NET (WPF/ASP.NET) • Python/C++</p>
+          </div>
+        </div>
+
+        <nav class="links" data-i18n-attr="aria-label:nav.aria">
+          <a href="#skills" data-i18n="nav.skills">Skills</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#opensource" data-i18n="nav.opensource">Open Source</a>
+        </nav>
+
+        <div class="actions">
+          <div class="lang-pill" role="group" aria-label="Language switch">
+            <button class="lang-seg" type="button" data-lang="en" data-i18n-attr="aria-label:lang.en_alt">
+              <img class="flag" src="assets/flags/en.png" data-i18n-attr="alt:lang.en_alt" alt="English (EN)" />
+              <span>EN</span>
+            </button>
+            <span class="lang-divider" aria-hidden="true"></span>
+            <button class="lang-seg" type="button" data-lang="hu" data-i18n-attr="aria-label:lang.hu_alt">
+              <img class="flag" src="assets/flags/hu.png" data-i18n-attr="alt:lang.hu_alt" alt="Magyar (HU)" />
+              <span>HU</span>
+            </button>
+          </div>
+
+          <button id="themeBtn" class="btn" type="button" data-i18n-attr="aria-label:theme.toggle_aria">
+            <img class="icon-img" src="assets/icon/light.png" alt="" aria-hidden="true" />
+            <span id="themeLabel">Dark mode</span>
+          </button>
+
+          <a class="btn primary" href="#contact">
+            <span class="icon" aria-hidden="true">✉️</span>
+            <span data-i18n="btn.get_in_touch">Contact</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+      <section class="hero" id="top">
+          <div class="hero-grid">
+              <div class="headline">
+                  <span class="kicker"><span class="kdot"></span> <span data-i18n="hero.kicker">Budapest • Székesfehérvár • Hybrid</span></span>
+                  <h2 data-i18n-html="hero.title">
+                      Practical IT support<br>
+                      Developer mindset
+                  </h2>
+                  <p data-i18n-html="hero.desc">
+                      I’m looking for an <strong>IT Support</strong> role: handling <strong>user requests</strong>, <strong>Windows endpoint setup</strong>, <strong>incident troubleshooting</strong>, and <strong>ticket-based support</strong>. I also have hands-on practice from <strong>Cisco routing/switching</strong> labs.
+                  </p>
+                  <p data-i18n-html="hero.desc2">
+                      On the side, I build <strong>application</strong> and <strong>small systems</strong> focused on <strong>clear UI</strong>, <strong>reliable</strong> and <strong>secure data handling</strong>, and practical outputs like reports and exports.
+                  </p>
+
+                  <div class="hero-cta">
+                      <a class="btn primary" href="https://github.com/zka26" target="_blank" rel="noreferrer noopener" aria-label="Open GitHub profile (opens in a new tab)">
+                          <img class="icon-img" src="assets/icon/github.png" alt="" aria-hidden="true" />
+                          <span data-i18n="hero.cta.github">GitHub</span>
+                      </a>
+                      <a class="btn" href="#projects">
+                          <img class="icon-img" src="assets/icon/projects.png" alt="" aria-hidden="true" />
+                          <span data-i18n="hero.cta.projects">See projects</span>
+                      </a>
+                  </div>
+              </div>
+
+              <div class="stats">
+                  <div class="card">
+                      <h3 data-i18n="stats.focus.title">Focus</h3>
+                      <p data-i18n="stats.focus.desc">Windows endpoint support, networking fundamentals, troubleshooting, and small automations that save time.</p>
+                      <div class="tagrow">
+                          <span class="tag" data-i18n="stats.focus.tag1">Windows</span>
+                          <span class="tag" data-i18n="stats.focus.tag2">Cisco</span>
+                          <span class="tag" data-i18n="stats.focus.tag3">Troubleshooting</span>
+                      </div>
+                  </div>
+
+                  <div class="card">
+                      <h3 data-i18n="stats.building.title">Current projects</h3>
+                      <p data-i18n="stats.building.desc">A fast competition scoring app that generates clean rankings and printable reports, and a small-business CRM to track orders, stock, and follow-ups in one place.</p>
+                      <div class="tagrow">
+                          <span class="tag" data-i18n="stats.building.tag1">WPF/.NET 8</span>
+                          <span class="tag" data-i18n="stats.building.tag2">ASP.NET Core</span>
+                          <span class="tag" data-i18n="stats.building.tag3">PostgreSQL</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Skills (rendered from JSON) -->
+      <section id="skills">
+  <div class="section-title">
+    <h2 data-i18n="skills.title">Skills</h2>
+    <p data-i18n="skills.subtitle">Core skills from hands-on labs and practical projects.</p>
+  </div>
+
+  <div id="skillsGrid" class="grid" aria-live="polite"></div>
+</section>
+
+      <!-- Projects (rendered from JSON) -->
+      <section id="projects">
+          <div class="section-title">
+              <h2 data-i18n="projects.title">Projects</h2>
+              <p data-i18n="projects.subtitle">A selection of previous work and personal builds</p>
+          </div>
+          <div id="projectsGrid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <!-- Open source (rendered from JSON) -->
+      <section id="opensource">
+          <div class="section-title">
+              <h2 data-i18n="os.title">Open Source</h2>
+              <p data-i18n="os.subtitle">A few open-source contributions</p>
+          </div>
+          <div id="osGrid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+          <div class="section-title">
+              <h2 data-i18n="contact.title">Contact</h2>
+          </div>
+
+          <div class="card">
+              <p data-i18n-html="contact.pitch">
+                  Feel free to reach out anytime.
+              </p>
+              <div class="hero-cta" style="margin-top: 14px;">
+                  <a class="btn primary" href="mailto:katonaz274@gmail.com">
+                      <img class="icon-img" src="assets/icon/gmail.png" alt="" aria-hidden="true" />
+                      <span>katonaz274@gmail.com</span>
+                  </a>
+                  <a class="btn" href="https://github.com/zka26" target="_blank" rel="noreferrer noopener">
+                      <img class="icon-img" src="assets/icon/github.png" alt="" aria-hidden="true" />
+                      <span>github.com/zka26</span>
+                  </a>
+              </div>
+          </div>
+      </section>
+
+      <footer>
+          <div class="foot">
+              <div data-i18n-html="footer.copyright">© <span id="year"></span> Zoltán Katona</div>
+              <div class="small" data-i18n="footer.built">Készült: HTML • CSS • JS (GitHub Pages)</div>
+          </div>
+      </footer>
+  </main>
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
