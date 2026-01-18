@@ -361,6 +361,15 @@ header {
   background: rgba(11,18,32,0.06);
 }
 
+/* Fix: Light theme: mobile menu overlay should be light so black text stays readable */
+[data-theme="light"] .mobile-menu {
+  background: rgba(246, 247, 251, 0.78);
+}
+
+[data-theme="light"] .mobile-menu-panel {
+  background: rgba(255, 255, 255, 0.82);
+}
+
 .to-top {
   position: fixed;
   right: var(--pad);
