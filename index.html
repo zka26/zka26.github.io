@@ -45,29 +45,48 @@
           <a href="#opensource" data-i18n="nav.opensource">Open Source</a>
         </nav>
 
+        <button id="menuBtn"
+                class="btn icon-btn menu-btn"
+                type="button"
+                aria-label="Open menu"
+                aria-controls="mobileMenu"
+                aria-expanded="false">
+          <span class="hamburger" aria-hidden="true"></span>
+          <span class="btn-text sr-only">Menu</span>
+        </button>
+
         <div class="actions">
           <div class="lang-pill" role="group" aria-label="Language switch">
             <button class="lang-seg" type="button" data-lang="en" data-i18n-attr="aria-label:lang.en_alt">
               <img class="flag" src="assets/flags/en.png" data-i18n-attr="alt:lang.en_alt" alt="English (EN)" />
-              <span>EN</span>
+              <span class="lang-code">EN</span>
             </button>
             <span class="lang-divider" aria-hidden="true"></span>
             <button class="lang-seg" type="button" data-lang="hu" data-i18n-attr="aria-label:lang.hu_alt">
               <img class="flag" src="assets/flags/hu.png" data-i18n-attr="alt:lang.hu_alt" alt="Magyar (HU)" />
-              <span>HU</span>
+              <span class="lang-code">HU</span>
             </button>
           </div>
 
-          <button id="themeBtn" class="btn" type="button" data-i18n-attr="aria-label:theme.toggle_aria">
+          <button id="themeBtn" class="btn icon-btn" type="button" data-i18n-attr="aria-label:theme.toggle_aria">
             <img class="icon-img" src="assets/icon/light.png" alt="" aria-hidden="true" />
-            <span id="themeLabel">Dark mode</span>
+            <span id="themeLabel" class="btn-text">Dark mode</span>
           </button>
 
-          <a class="btn primary" href="#contact">
+          <a class="btn primary icon-btn" href="#contact" aria-label="Contact">
             <span class="icon" aria-hidden="true">✉️</span>
-            <span data-i18n="btn.get_in_touch">Contact</span>
+            <span class="btn-text" data-i18n="btn.get_in_touch">Contact</span>
           </a>
         </div>
+      </div>
+
+      <div id="mobileMenu" class="mobile-menu" hidden>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation">
+          <a href="#skills" data-i18n="nav.skills">Skills</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#opensource" data-i18n="nav.opensource">Open Source</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
       </div>
     </div>
   </header>
@@ -124,7 +143,6 @@
           </div>
       </section>
 
-      <!-- Skills (rendered from JSON) -->
       <section id="skills">
   <div class="section-title">
     <h2 data-i18n="skills.title">Skills</h2>
@@ -134,7 +152,6 @@
   <div id="skillsGrid" class="grid" aria-live="polite"></div>
 </section>
 
-      <!-- Projects (rendered from JSON) -->
       <section id="projects">
           <div class="section-title">
               <h2 data-i18n="projects.title">Projects</h2>
@@ -143,7 +160,6 @@
           <div id="projectsGrid" class="grid" aria-live="polite"></div>
       </section>
 
-      <!-- Open source (rendered from JSON) -->
       <section id="opensource">
           <div class="section-title">
               <h2 data-i18n="os.title">Open Source</h2>
@@ -152,7 +168,6 @@
           <div id="osGrid" class="grid" aria-live="polite"></div>
       </section>
 
-      <!-- Contact -->
       <section id="contact">
           <div class="section-title">
               <h2 data-i18n="contact.title">Contact</h2>
@@ -182,6 +197,14 @@
           </div>
       </footer>
   </main>
+
+  <button id="toTopBtn"
+          class="btn icon-btn to-top"
+          type="button"
+          aria-label="Back to top">
+    <span class="icon" aria-hidden="true">↑</span>
+    <span class="btn-text sr-only">Back to top</span>
+  </button>
 
   <script src="js/i18n.js" defer></script>
   <script src="js/app.js" defer></script>

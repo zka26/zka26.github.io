@@ -108,6 +108,7 @@ header {
   -webkit-backdrop-filter: blur(14px);
   background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.10));
   border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow: visible;
 }
 [data-theme="light"] header {
   background: linear-gradient(to bottom, rgba(246,247,251,0.85), rgba(246,247,251,0.55));
@@ -150,10 +151,10 @@ header {
 }
 
 .brand img {
-    display: block;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06), 0 8px 22px rgba(0, 0, 0, 0.18);
+  display: block;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06), 0 8px 22px rgba(0, 0, 0, 0.18);
 }
 
 .links {
@@ -228,12 +229,12 @@ header {
 }
 
 .icon-img {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    object-fit: cover;
-    border-radius: 4px;
-    opacity: 0.9;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  object-fit: cover;
+  border-radius: 4px;
+  opacity: 0.9;
 }
 
 
@@ -291,8 +292,288 @@ header {
   opacity: 0.9;
 }
 
-/* Hero */
+/* ---------- Mobile header tweaks + hamburger menu ---------- */
+.menu-btn {
+  display: inline-flex;
+}
 
+.hamburger {
+  position: relative;
+  width: 18px;
+  height: 12px;
+  display: inline-block;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 99px;
+  background: currentColor;
+  opacity: 0.9;
+}
+.hamburger::before {
+  top: 1px;
+  box-shadow: 0 4px 0 currentColor, 0 8px 0 currentColor;
+}
+.hamburger::after { display: none; }
+
+.btn.icon-btn {
+  gap: 10px;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: 68px;
+  right: var(--pad);
+  left: var(--pad);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  background: rgba(0,0,0,0.55);
+  box-shadow: var(--shadow2);
+  padding: 10px;
+}
+
+.mobile-menu-panel a {
+  display: flex;
+  align-items: center;
+  padding: 12px 12px;
+  border-radius: 12px;
+  color: var(--fg);
+  font-size: 14px;
+}
+.mobile-menu-panel a:hover {
+  text-decoration: none;
+  background: rgba(255,255,255,0.08);
+}
+[data-theme="light"] .mobile-menu-panel a:hover {
+  background: rgba(11,18,32,0.06);
+}
+
+.to-top {
+  position: fixed;
+  right: var(--pad);
+  bottom: calc(var(--pad) + 10px);
+  z-index: 9998;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Keep it readable above the blur overlay but below it */
+.mobile-menu[hidden] ~ .to-top {
+  z-index: 9998;
+}
+
+.to-top {
+  position: fixed;
+  right: var(--pad);
+  bottom: calc(var(--pad) + 10px);
+  z-index: 9998;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Keep it readable above the blur overlay but below it */
+.mobile-menu[hidden] ~ .to-top {
+  z-index: 9998;
+}
+
+.to-top {
+  position: fixed;
+  right: var(--pad);
+  bottom: calc(var(--pad) + 10px);
+  z-index: 9998;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Keep it readable above the blur overlay but below it */
+.mobile-menu[hidden] ~ .to-top {
+  z-index: 9998;
+}
+
+.to-top {
+  position: fixed;
+  right: var(--pad);
+  bottom: calc(var(--pad) + 10px);
+  z-index: 9998;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Keep it readable above the blur overlay but below it */
+.mobile-menu[hidden] ~ .to-top {
+  z-index: 9998;
+}
+
+@media (max-width: 759px) {
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 8px 10px;
+  }
+
+  /* Row 1: logo + name */
+  .brand {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  /* Keep only the name in row 1 (inside brand) */
+  .brand > div {
+    display: contents;
+  }
+
+  .brand h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Always hide the original taglines on mobile */
+  .brand p {
+    display: none !important;
+  }
+
+  /* Row 1: buttons + hamburger */
+  .actions {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .menu-btn {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+  }
+
+  .lang-seg .lang-code { display: none; } /* flags only */
+  .btn .btn-text { display: none; }       /* icon-only buttons */
+
+  .btn.icon-btn {
+    padding: 10px 12px;
+  }
+
+  /* Row 2: injected taglines (matches original tagline styling) */
+  .nav-subline {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 0;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Mobile overlay menu: align under the first row */
+  .mobile-menu-panel {
+    top: 58px;
+  }
+}
+
+@media (min-width: 760px) {
+  .links { display: flex; }
+  .menu-btn { display: none; }
+  .mobile-menu { display: none !important; }
+}
+
+/* Hero */
 .hero {
   padding: 56px 0 24px;
 }
@@ -541,10 +822,15 @@ footer {
 
 /* Responsive */
 @media (min-width: 760px) {
-  .links { display: flex; }
   .hero-grid { grid-template-columns: 1.4fr 0.6fr; }
   .grid { grid-template-columns: 1fr 1fr; }
   .headline h2 { font-size: 42px; }
+}
+
+@media (max-width: 412px) {
+  .brand h1 {
+    display: none;
+  }
 }
 
 /* Motion preferences */

@@ -2,6 +2,7 @@
    - Renders projects + open source from /data/projects.json
    - Manages language dropdown UI
    - Manages theme toggle + localized theme label
+   - Mobile hamburger menu
 */
 
 async function loadJson(url) {
@@ -170,6 +171,95 @@ async function renderAll() {
   renderSkills();
 }
 
+function initMobileMenu() {
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+  if (!btn || !menu) return;
+
+  function isOpen() {
+    return !menu.hasAttribute("hidden");
+  }
+
+  function setOpen(open) {
+    if (open) menu.removeAttribute("hidden");
+    else menu.setAttribute("hidden", "");
+
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }
+
+  btn.addEventListener("click", () => setOpen(!isOpen()));
+
+  // Click outside panel closes
+  menu.addEventListener("click", (e) => {
+    const panel = menu.querySelector(".mobile-menu-panel");
+    if (panel && !panel.contains(e.target)) setOpen(false);
+  });
+
+  // Clicking a link closes + smooth scroll remains handled by browser
+  menu.querySelectorAll("a[href^=\"#\"]").forEach(a => {
+    a.addEventListener("click", () => setOpen(false));
+  });
+
+  // Escape closes
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isOpen()) setOpen(false);
+  });
+}
+
+function portalMobileMenuToBody() {
+  const menu = document.getElementById("mobileMenu");
+  if (!menu) return;
+
+  if (menu.parentElement !== document.body) {
+    document.body.appendChild(menu);
+  }
+}
+
+/* ---------- Mobile header: move taglines to their own row ---------- */
+function initMobileHeaderTaglines() {
+  const mq = window.matchMedia("(max-width: 759px)");
+
+  function apply() {
+    const nav = document.querySelector(".nav");
+    if (!nav) return;
+
+    const existing = nav.querySelector(".nav-subline");
+
+    if (!mq.matches) {
+      if (existing) existing.remove();
+      return;
+    }
+
+    const tagline1 = window.t(getLang(), "nav.tagline");
+    const tagline2 = window.t(getLang(), "nav.tagline2");
+
+    const text = `${tagline1} \u2022 ${tagline2}`;
+
+    if (existing) {
+      existing.textContent = text;
+      return;
+    }
+
+    const line = document.createElement("div");
+    line.className = "nav-subline";
+    line.textContent = text;
+    nav.appendChild(line);
+  }
+
+  apply();
+
+  mq.addEventListener?.("change", apply);
+  window.addEventListener("resize", apply);
+
+  document.addEventListener("langchange", apply);
+}
+
 /* ---------- Theme ---------- */
 function initTheme() {
   const root = document.documentElement;
@@ -233,13 +323,39 @@ function initTheme() {
   }
 }
 
+function initScrollToTop() {
+  const btn = document.getElementById("toTopBtn");
+  if (!btn) return;
+
+  function getScrollProgress() {
+    const doc = document.documentElement;
+    const max = Math.max(1, doc.scrollHeight - doc.clientHeight);
+    return doc.scrollTop / max;
+  }
+
+  function update() {
+    const show = getScrollProgress() >= 0.4; // 40%
+    btn.classList.toggle("show", show);
+  }
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   initTheme();
+  portalMobileMenuToBody();
+  initMobileMenu();
+  initMobileHeaderTaglines();
+  initScrollToTop();
 
-  // Render initial (after i18n initialized)
   await renderAll();
 
-  // Re-render on language change (projects + open source)
   document.addEventListener("langchange", async () => {
     await renderAll();
   });
