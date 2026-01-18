@@ -231,7 +231,7 @@
         "en": "IDE21 — Hungarian localization improvements"
       },
       "desc": {
-        "hu": "Hiányzó magyar UI szövegek pótlása, majd a meglévő fordítás következetesítése (terminológia, helyesírás, stílus).",
+        "hu": "Hiányzó magyar UI szövegek pótlása, majd a meglévő fordítás azonos szintre hozása (terminológia, helyesírás, stílus).",
         "en": "Filled missing Hungarian UI strings, then refined consistency across existing translations (terminology, wording, style)."
       },
       "stack": "i18n • UI copy • consistency",
